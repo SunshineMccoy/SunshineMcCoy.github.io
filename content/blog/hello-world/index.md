@@ -1,22 +1,14 @@
 ---
-title: Hello World
-date: "2015-05-01T22:12:03.284Z"
+title: Hello World!
+date: "2019-10-13"
 description: "Hello World"
 ---
 
-This is my first post on my new fake blog! How exciting!
+This is my first blog post on my new website! This site will be a host of my portfolio and blog about learning to code.
+I have been following the freeCodeCamp curriculum from [freecodecamp.org](https://freecodecamp.org/ "FreeCodeCamp").
+So far, I have finished 5 of the 6 certifications and just have the Information Security And Quality Assurance Certification remaining.
 
-I'm sure I'll write a lot more interesting things in the future.
+Recently, I have been learning how to make websites using Gatsby, which is a static site generator that uses React as a framework. Using a static 
+site generator will ensure that my sites load quickly and are efficient to host, so I will also be using Gatsby for my upcoming freelancing opportunities.
 
-Oh, and here's a great quote from this Wikipedia on
-[salted duck eggs](http://en.wikipedia.org/wiki/Salted_duck_egg).
 
-> A salted duck egg is a Chinese preserved food product made by soaking duck
-> eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-> supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-> charcoal paste. The eggs may also be sold with the salted paste removed,
-> wrapped in plastic, and vacuum packed. From the salt curing process, the
-> salted duck eggs have a briny aroma, a gelatin-like egg white and a
-> firm-textured, round yolk that is bright orange-red in color.
-
-![Chinese Salty Egg](./salty_egg.jpg)

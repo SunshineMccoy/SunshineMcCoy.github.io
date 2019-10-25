@@ -1,7 +1,38 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
+import resume from "./mccoy-resume.pdf"
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
+
+const Container = styled.div`
+  background-color: #ffffcc;
+  min-height: 100vh
+`
+const H1 = styled.h1`
+  margin-bottom: ${rhythm(1.5)};
+  margin-top: 0px;
+  background-color: #66ffff;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    font-size: 64px
+  }
+`
+
+const Main = styled.main`
+  max-width: ${rhythm(36)}; 
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: ${rhythm(3)};
+
+  @media (min-width: 768px) {
+    padding-top: ${rhythm(5)};
+  }
+  
+`
 
 class Layout extends React.Component {
   render() {
@@ -11,13 +42,7 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
+        <H1>
           <Link
             style={{
               boxShadow: `none`,
@@ -27,8 +52,39 @@ class Layout extends React.Component {
             to={`/`}
           >
             {title}
-          </Link>
-        </h1>
+          </Link> 
+          <span> | </span>
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            to={`./portfolio`}
+          >
+            {`Portfolio  `}
+          </Link> 
+          <a
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            href={resume}
+          >
+            {`Resume  `}
+          </a> 
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          >
+            {`Blog  `}
+          </Link> 
+        </H1>
       )
     } else {
       header = (
@@ -36,6 +92,9 @@ class Layout extends React.Component {
           style={{
             fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
+            backgroundColor: `#66ffff`,
+            position: `fixed`,
+            width: `100%`
           }}
         >
           <Link
@@ -48,26 +107,56 @@ class Layout extends React.Component {
           >
             {title}
           </Link>
+          <span> | </span>
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            to={`/portfolio`}
+          >
+            {`Portfolio  `}
+          </Link> 
+          <a
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            href={resume}
+            >
+            {`Resume  `}
+          </a> 
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          >
+            {`Blog  `}
+          </Link> 
         </h3>
       )
     }
     return (
-      <div
+      <Container
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+         
         }}
       >
         <header>{header}</header>
-        <main>{children}</main>
+        <Main >{children}</Main>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
-      </div>
+      </Container>
     )
   }
 }

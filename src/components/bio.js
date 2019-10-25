@@ -10,13 +10,29 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
+import styled from "styled-components"
+
+
+const Section = styled.section`
+  border-bottom: 2px dashed black;
+  margin-top: 5vh
+`
+const Container = styled.div`
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row
+  }
+`
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/kahiau_photo_cropped.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 400, height: 400) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -32,36 +48,54 @@ const Bio = () => {
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
+  const { author} = data.site.siteMetadata
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
-    >
+    <Container >
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
         style={{
-          marginRight: rhythm(1 / 2),
+          top: `100`,
+          marginLeft: `0`,
+          marginRight: `5%`,
           marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
+          minWidth: 400,
+          borderRadius: `2%`,
+          maxWidth: `500px`,
+          width: `400px`,
+          height: `400px`
         }}
         imgStyle={{
-          borderRadius: `50%`,
+          borderRadius: `2%`,
         }}
       />
-      <p>
-        Written by <strong>{author}</strong> who lives and works in San
-        Francisco building useful things.
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
-    </div>
+      
+      <div
+        style={{
+          display: `flex`,
+          marginBottom: rhythm(2.5),
+          flexDirection: `column`,
+          justifyContent: `center`,
+          alignItems: `center`,
+        }}
+      >
+        <Section>
+          <h2>Hello World!</h2>
+          <h3>Michael McCoy, Full-Stack Web Developer</h3>
+          <p>My name is Michael McCoy and I am an aspiring full-stack web developer living in Norfolk, Virginia. 
+            I have been learning the MERN stack using the freeCodeCamp curriculum. 
+            This website is going to serve as a coding portfolio and homebase to document my coding journey! </p>
+        </Section>
+        <Section>
+          <h3>Contact</h3>
+          <p>Please send any emails to mccoymichaeljohn@gmail.com and I'll get back to you ASAP! 
+            You can also find me at <a href="https://www.linkedin.com/in/mccoymichaelj/">LinkedIn</a>, <a href="https://twitter.com/mjmcoder">twitter</a>,
+             and <a href="https://github.com/SunshineMccoy">github</a>. </p>
+        </Section>
+    
+      </div>
+    </Container>
+
   )
 }
 
