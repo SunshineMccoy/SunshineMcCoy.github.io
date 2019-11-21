@@ -74,16 +74,6 @@ class Layout extends React.Component {
           >
             {`Resume  `}
           </a> 
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {`Blog  `}
-          </Link> 
         </H1>
       )
     } else {
@@ -128,16 +118,6 @@ class Layout extends React.Component {
             >
             {`Resume  `}
           </a> 
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {`Blog  `}
-          </Link> 
         </h3>
       )
     }
